@@ -20,4 +20,5 @@ secretAgent.o: secretAgent.c
 	cc $(CFLAGS) -c secretAgent.c
 
 clean:
-	rm *.o secretAgent 
+	rm *.o
+	rm secretAgent 
