@@ -9,7 +9,7 @@
 void sigusr_handler(int signum) {
 	char* str = "signal SIGUSR1 recu !\n";
 	swrite(1, str, strlen(str)*sizeof(char));
-	exit(1);
+	_exit(1);
 }
 
 int main(int argc, char const *argv[])
