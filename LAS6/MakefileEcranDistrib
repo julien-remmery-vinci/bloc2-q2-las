@@ -1,0 +1,29 @@
+# made using makegen by julien.r
+CFLAGS=-std=c17 -pedantic -Wvla -Werror -Wall -D_DEFAULT_SOURCE -g
+
+all: 63admin 63ecran 63distributeur 
+
+63admin: 63admin.o utils_v1.o ipcconfig.h
+	cc $(CFLAGS) -o 63admin 63admin.o utils_v1.o
+
+63ecran: 63ecran.o utils_v1.o ipcconfig.h
+	cc $(CFLAGS) -o 63ecran 63ecran.o utils_v1.o
+
+63distributeur: 63distributeur.o utils_v1.o ipcconfig.h
+	cc $(CFLAGS) -o 63distributeur 63distributeur.o utils_v1.o
+
+utils_v1.o: utils_v1.c
+	cc $(CFLAGS) -c utils_v1.c
+
+63admin.o: 63admin.c
+	cc $(CFLAGS) -c 63admin.c
+
+63ecran.o: 63ecran.c
+	cc $(CFLAGS) -c 63ecran.c
+
+63distributeur.o: 63distributeur.c
+	cc $(CFLAGS) -c 63distributeur.c
+
+clean:
+	rm *.o
+	rm 63admin 63ecran 63distributeur 

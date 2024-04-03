@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
 		action.sa_handler = sighandler;
 		ssigfillset(&action.sa_mask);
 		action.sa_flags = 0;
-  
+
   		int r = sigaction (i, &action, NULL);
   		if(r < 0) {
   			perror("Erreur sigaction");
